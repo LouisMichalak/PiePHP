@@ -1,0 +1,1 @@
+<p>je suis la vue User/index.php</p>
