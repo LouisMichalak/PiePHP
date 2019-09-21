@@ -1,0 +1,1 @@
+<p>Je suis à la vue Article/index.php</p>

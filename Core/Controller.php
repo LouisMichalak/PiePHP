@@ -2,12 +2,24 @@
 
 namespace Core;
 
+use Core\Request;
+
 abstract class Controller
 {
     /**
      * @var string $_render Static property that will contain html code to print
      */
     protected static $_render = '';
+
+    /**
+     * @var object $request Property containing 
+     */
+    protected $request = null;
+
+    public function __construct()
+    {
+        $this->request = new Request();
+    }
 
     /**
      * render index from associate Controller

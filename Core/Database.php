@@ -8,28 +8,28 @@ abstract class Database
      * @var string $host name of the host used
      * @example $host 'localhost'
      */
-    private $host = '';
+    protected $host = '';
 
     /**
      * @var string $name name of the database used
      */
-    private $dbName = '';
+    protected $dbName = '';
 
     /**
      * @var string $username name of user who connect to database
      * @example $username 'root'
      */
-    private $username = '';
+    protected $username = '';
 
     /**
      * @var string $password password associate to the database
      */
-    private $password = '';
+    protected $password = '';
 
     /**
      * @var object $db PDOStatement instance
      */
-    private $pdoObj = null;
+    protected $pdoObj = null;
 
     public function __construct()
     {
@@ -59,6 +59,6 @@ abstract class Database
      */
     protected function executeQuery(string $query)
     {
-
+        return $this->pdoObj->query($query);
     }
 }

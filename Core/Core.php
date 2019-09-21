@@ -21,10 +21,16 @@ final class Core
             $query === null
             || !class_exists($controlledPath)
             || !method_exists($controlledPath, $controlledMethod)
-            ) {
+        ) {
             die('404 path undefined');
         }
         $controllerObj = new $controlledPath();
-        $controllerObj->$controlledMethod();
+        call_user_func_array(
+            [
+                $controllerObj,
+                $controlledMethod
+            ],
+            empty($query['slugs']) ? [] : $query['slugs']
+        );
     }
 }
