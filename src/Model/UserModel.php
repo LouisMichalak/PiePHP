@@ -22,6 +22,10 @@ final class UserModel extends Entity
      */
     private $password = '';
 
+    private $nom = '';
+
+    private $prenom = '';
+
     /**
      * construct instance of the model
      * 
@@ -52,7 +56,19 @@ final class UserModel extends Entity
      */
     public function setPassword(string $password)
     {
-        $this->password = $password;
+        $this->password = password_hash($password, PASSWORD_ARGON2I);
+        return $this;
+    }
+    
+    public function setNom(string $nom)
+    {
+        $this->nom = $nom;
+        return $this;
+    }
+
+    public function setPrenom(string $prenom)
+    {
+        $this->prenom = $prenom;
         return $this;
     }
 }

@@ -99,7 +99,7 @@ final class Router
                     $result['slugs'] = array_reverse($result['slugs']);
                     $arrayOfResults = [];
                     foreach($result['slugs'][0] as $key => $value) {
-                        $arrayOfResults[$value] = $arrayMatchs[$key];
+                        $arrayOfResults[$value] = $arrayMatchs[$key][0];
                     }
                     $result['slugs'] = $arrayOfResults;
                     return $result;

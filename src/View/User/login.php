@@ -1,7 +1,20 @@
-<form method="post" action="/PiePHP/index.php">
-    <label for="email">email</label>
-    <input type="email" id="email" name="email">
-    <label for="pwd">mot de passe</label>
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="envoyer">
+<?php
+if(!empty($error)) {
+    echo '<div class="row center-align">';
+    echo '<h6 class="btn red">Les informations sont incorrectes<h6>';
+    echo '</div>';
+}
+?>
+<form method="post">
+    <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+        <input type="email" id="email" name="email" required>
+        <label for="email">Email</label>
+    </div>
+    <div class="input-field col s12">
+        <i class="material-icons prefix">security</i>
+        <input type="password" id="pwd" name="pwd" required>
+        <label for="pwd">Password</label>
+    </div>
+    <input class="btn" type="submit" value="envoyer">
 </form>

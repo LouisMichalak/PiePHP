@@ -84,6 +84,7 @@ final class ORM extends Database
             $query .= count($fields) - 1 === $ctr
                 ? ' WHERE id = ' . $id
                 : ',';
+            $ctr++;
         }
         return $this->executeQuery($query) === false ? false : true;
     }

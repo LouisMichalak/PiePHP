@@ -49,6 +49,8 @@ final class Request
      */
     public function getParam(string $index)
     {
-        return $this->parameters[$index];
+        return empty($this->parameters[$index])
+            ? null
+            : $this->parameters[$index];
     }
 }

@@ -34,7 +34,7 @@ abstract class Database
     public function __construct()
     {
         $this->host = 'localhost';
-        $this->dbName = 'piephp';
+        $this->dbName = 'mycinema';
         $this->username = 'root';
 
         $connectInfo = 'mysql:host='. $this->host .';dbname='. $this->dbName;

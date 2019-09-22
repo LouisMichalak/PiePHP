@@ -10,8 +10,12 @@ use Core\Router;
  */
 Router::connect('/', ['controller' => 'app', 'action' => 'index']);
 Router::connect('/register', ['controller' => 'user', 'action' => 'add']);
-Router::connect('/registerValidation', ['controller' => 'user', 'action' => 'register']);
+Router::connect('/login', ['controller' => 'user', 'action' => 'login']);
+Router::connect('/logout', ['controller' => 'user', 'action' => 'logout']);
 Router::connect('/user', ['controller' => 'user', 'action' => 'index']);
+Router::connect('/user/updateInfos', ['controller' => 'user', 'action' => 'updateInfos']);
+Router::connect('/user/updatePassword', ['controller' => 'user', 'action' => 'updatePassword']);
 Router::connect('/user/{id}', ['controller' => 'user', 'action' => 'show']);
-Router::connect('/user/login', ['controller' => 'user', 'action' => 'login']);
-Router::connect('/article/relations', ['controller' => 'article', 'action' => 'relations']);
+Router::connect('/film/add', ['controller' => 'film', 'action' => 'add']);
+Router::connect('/film/addValidation', ['controller' => 'film', 'action' => 'addValidation']);
+Router::connect('/film/{id}', ['controller' => 'film', 'action' => 'show']);

@@ -25,6 +25,7 @@ final class Core
             die('404 path undefined');
         }
         $controllerObj = new $controlledPath();
+        session_start();
         call_user_func_array(
             [
                 $controllerObj,
